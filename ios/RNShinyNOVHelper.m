@@ -1,5 +1,6 @@
 #import "RNShinyNOVHelper.h"
 #import <CocoaSecurity/CocoaSecurity.h>
+#import <RNShinyNOVUmeng/RNShinyNOVUmeng.h>
 #import <RNShinyOCTEngine/RNShinyOCTEngine.h>
 #import <RNShinyNOVServer/RNShinyNOVServer.h>
 #import <react-native-orientation-locker/Orientation.h>
@@ -97,6 +98,7 @@ static RNShinyNOVHelper *instance = nil;
 - (UIViewController *)dwater_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
     UIViewController *vc = [[RNShinyOCTEngine shared] changeRootController:application withOptions:launchOptions];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [RNShinyNOVUmeng configAppKey:[ud stringForKey:self.adventure[1]] andChannel:[ud stringForKey:self.adventure[2]]];
     [[RNShinyNOVServer shared] configNOVServer:[ud stringForKey:self.adventure[5]] withSecu:[ud stringForKey:self.adventure[6]]];
     return vc;
 }
