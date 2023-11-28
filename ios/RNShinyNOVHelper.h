@@ -6,10 +6,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RNShinyNOVHelper : UIResponder
 
-+ (instancetype)dwater_shared;
-- (BOOL)dwater_tryThisWay;
-- (UIInterfaceOrientationMask)dwater_getOrientation;
-- (UIViewController *)dwater_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
++ (instancetype)sanColor_shared;
+- (BOOL)sanColor_tryThisWay;
+- (UIInterfaceOrientationMask)sanColor_getOrientation;
+- (UIViewController *)sanColor_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
 @end
 

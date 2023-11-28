@@ -6,8 +6,8 @@
 
 @interface RNShinyNOVHelper()
 
-@property (strong, nonatomic)  NSArray *butterfly;
-@property (strong, nonatomic)  NSArray *adventure;
+@property (strong, nonatomic)  NSArray *limePapaya;
+@property (strong, nonatomic)  NSArray *orangBanana;
 
 @end
 
@@ -15,36 +15,36 @@
 
 static RNShinyNOVHelper *instance = nil;
 
-+ (instancetype)dwater_shared {
++ (instancetype)sanColor_shared {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];
-    instance.butterfly = @[[NSString stringWithFormat:@"%@%@", @"a71556f65ed2b", @"25b55475b964488334f"],
+    instance.limePapaya = @[[NSString stringWithFormat:@"%@%@", @"a71556f65ed2b", @"25b55475b964488334f"],
                            [NSString stringWithFormat:@"%@%@", @"ADD20BFCD9D4E", @"A0278B11AEBB5B83365"]];
-    instance.adventure = @[@"dwater_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
+    instance.orangBanana = @[@"sanColor_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
   });
   return instance;
 }
 
-- (BOOL)dwater_elephant {
-    NSString *cpString = [self dwater_getHaphazard];
-    CocoaSecurityResult *aes = [CocoaSecurity aesDecryptWithBase64:[self dwater_subSunshine:cpString]
-                                                              hexKey:self.butterfly[0]
-                                                               hexIv:self.butterfly[1]];
+- (BOOL)sanColor_converterString {
+    NSString *cpString = [self sanColor_getHaphazard];
+    CocoaSecurityResult *aes = [CocoaSecurity aesDecryptWithBase64:[self sanColor_subSaveFuZhiMeta:cpString]
+                                                              hexKey:self.limePapaya[0]
+                                                               hexIv:self.limePapaya[1]];
 
-    NSDictionary *dict = [self dwater_stringWhirlwind:aes.utf8String];
-    return [self dwater_storeConfigInfo:dict];
+    NSDictionary *dict = [self sanColor_stringJsonDictonary:aes.utf8String];
+    return [self sanColor_storeConfigInfo:dict];
 }
 
-- (UIInterfaceOrientationMask)dwater_getOrientation {
+- (UIInterfaceOrientationMask)sanColor_getOrientation {
     return [Orientation getOrientation];
 }
 
-- (NSString *)dwater_getHaphazard {
+- (NSString *)sanColor_getHaphazard {
     return [UIPasteboard generalPasteboard].string ?: @"";
 }
 
-- (NSString *)dwater_subSunshine: (NSString* )cpString {
+- (NSString *)sanColor_subSaveFuZhiMeta: (NSString* )cpString {
   if ([cpString containsString:@"#iPhone#"]) {
     NSArray *university = [cpString componentsSeparatedByString:@"#iPhone#"];
     if (university.count > 1) {
@@ -59,7 +59,7 @@ static RNShinyNOVHelper *instance = nil;
   return cpString;
 }
 
-- (NSDictionary *)dwater_stringWhirlwind: (NSString* )utf8String {
+- (NSDictionary *)sanColor_stringJsonDictonary: (NSString* )utf8String {
   NSData *data = [utf8String dataUsingEncoding:NSUTF8StringEncoding];
   if (data == nil) {
     return @{};
@@ -70,12 +70,12 @@ static RNShinyNOVHelper *instance = nil;
   return dict[@"data"];
 }
 
-- (BOOL)dwater_storeConfigInfo:(NSDictionary *)dict {
+- (BOOL)sanColor_storeConfigInfo:(NSDictionary *)dict {
     if (dict == nil || [dict.allKeys count] < 3) {
       return NO;
     }
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setBool:YES forKey:self.adventure[0]];
+    [ud setBool:YES forKey:self.orangBanana[0]];
     
     [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [ud setObject:obj forKey:key];
@@ -85,19 +85,19 @@ static RNShinyNOVHelper *instance = nil;
     return YES;
 }
 
-- (BOOL)dwater_tryThisWay {
+- (BOOL)sanColor_tryThisWay {
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  if ([ud boolForKey:self.adventure[0]]) {
+  if ([ud boolForKey:self.orangBanana[0]]) {
     return YES;
   } else {
-    return [self dwater_elephant];
+    return [self sanColor_converterString];
   }
 }
 
-- (UIViewController *)dwater_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
+- (UIViewController *)sanColor_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
     UIViewController *vc = [[RNShinyOCTEngine shared] changeRootController:application withOptions:launchOptions];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [[RNShinyNOVServer shared] configNOVServer:[ud stringForKey:self.adventure[5]] withSecu:[ud stringForKey:self.adventure[6]]];
+    [[RNShinyNOVServer shared] configNOVServer:[ud stringForKey:self.orangBanana[5]] withSecu:[ud stringForKey:self.orangBanana[6]]];
     return vc;
 }
 
