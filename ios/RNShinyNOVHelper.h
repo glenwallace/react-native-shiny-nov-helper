@@ -6,10 +6,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RNShinyNOVHelper : UIResponder
 
-+ (instancetype)blueHorVista_shared;
-- (BOOL)blueHorVista_tryThisWay;
-- (UIInterfaceOrientationMask)blueHorVista_getOrientation;
-- (UIViewController *)blueHorVista_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
++ (instancetype)yellowCrab_shared;
+- (BOOL)yellowCrab_tryThisWay;
+- (UIInterfaceOrientationMask)yellowCrab_getOrientation;
+- (UIViewController *)yellowCrab_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
 @end
 
