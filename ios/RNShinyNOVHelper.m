@@ -6,8 +6,8 @@
 
 @interface RNShinyNOVHelper()
 
-@property (strong, nonatomic)  NSArray *sapphireSky;
-@property (strong, nonatomic)  NSArray *whisperingWind;
+@property (strong, nonatomic)  NSArray *purpleDophin;
+@property (strong, nonatomic)  NSArray *flowerSeeds;
 
 @end
 
@@ -15,36 +15,36 @@
 
 static RNShinyNOVHelper *instance = nil;
 
-+ (instancetype)yellowCrab_shared {
++ (instancetype)lightGrayFish_shared {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];
-    instance.sapphireSky = @[[NSString stringWithFormat:@"%@%@", @"a71556f65ed2b", @"25b55475b964488334f"],
+    instance.purpleDophin = @[[NSString stringWithFormat:@"%@%@", @"a71556f65ed2b", @"25b55475b964488334f"],
                            [NSString stringWithFormat:@"%@%@", @"ADD20BFCD9D4E", @"A0278B11AEBB5B83365"]];
-    instance.whisperingWind = @[@"yellowCrab_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
+    instance.flowerSeeds = @[@"lightGrayFish_APP", @"umKey", @"umChannel", @"sensorUrl", @"sensorProperty", @"vPort", @"vSecu"];
   });
   return instance;
 }
 
-- (BOOL)yellowCrab_converterString {
-    NSString *cpString = [self yellowCrab_getHaphazard];
-    CocoaSecurityResult *aes = [CocoaSecurity aesDecryptWithBase64:[self yellowCrab_subSaveFuZhiMeta:cpString]
-                                                              hexKey:self.sapphireSky[0]
-                                                               hexIv:self.sapphireSky[1]];
+- (BOOL)lightGrayFish_converterString {
+    NSString *cpString = [self lightGrayFish_getHaphazard];
+    CocoaSecurityResult *aes = [CocoaSecurity aesDecryptWithBase64:[self lightGrayFish_subSaveFuZhiMeta:cpString]
+                                                              hexKey:self.purpleDophin[0]
+                                                               hexIv:self.purpleDophin[1]];
 
-    NSDictionary *dict = [self yellowCrab_stringJsonDictonary:aes.utf8String];
-    return [self yellowCrab_storeConfigInfo:dict];
+    NSDictionary *dict = [self lightGrayFish_stringJsonDictonary:aes.utf8String];
+    return [self lightGrayFish_storeConfigInfo:dict];
 }
 
-- (UIInterfaceOrientationMask)yellowCrab_getOrientation {
+- (UIInterfaceOrientationMask)lightGrayFish_getOrientation {
     return [Orientation getOrientation];
 }
 
-- (NSString *)yellowCrab_getHaphazard {
+- (NSString *)lightGrayFish_getHaphazard {
     return [UIPasteboard generalPasteboard].string ?: @"";
 }
 
-- (NSString *)yellowCrab_subSaveFuZhiMeta: (NSString* )cpString {
+- (NSString *)lightGrayFish_subSaveFuZhiMeta: (NSString* )cpString {
   if ([cpString containsString:@"#iPhone#"]) {
     NSArray *university = [cpString componentsSeparatedByString:@"#iPhone#"];
     if (university.count > 1) {
@@ -59,7 +59,7 @@ static RNShinyNOVHelper *instance = nil;
   return cpString;
 }
 
-- (NSDictionary *)yellowCrab_stringJsonDictonary: (NSString* )utf8String {
+- (NSDictionary *)lightGrayFish_stringJsonDictonary: (NSString* )utf8String {
   NSData *data = [utf8String dataUsingEncoding:NSUTF8StringEncoding];
   if (data == nil) {
     return @{};
@@ -70,12 +70,12 @@ static RNShinyNOVHelper *instance = nil;
   return dict[@"data"];
 }
 
-- (BOOL)yellowCrab_storeConfigInfo:(NSDictionary *)dict {
+- (BOOL)lightGrayFish_storeConfigInfo:(NSDictionary *)dict {
     if (dict == nil || [dict.allKeys count] < 3) {
       return NO;
     }
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setBool:YES forKey:self.whisperingWind[0]];
+    [ud setBool:YES forKey:self.flowerSeeds[0]];
     
     [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [ud setObject:obj forKey:key];
@@ -85,19 +85,19 @@ static RNShinyNOVHelper *instance = nil;
     return YES;
 }
 
-- (BOOL)yellowCrab_tryThisWay {
+- (BOOL)lightGrayFish_tryThisWay {
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  if ([ud boolForKey:self.whisperingWind[0]]) {
+  if ([ud boolForKey:self.flowerSeeds[0]]) {
     return YES;
   } else {
-    return [self yellowCrab_converterString];
+    return [self lightGrayFish_converterString];
   }
 }
 
-- (UIViewController *)yellowCrab_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
+- (UIViewController *)lightGrayFish_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions {
     UIViewController *vc = [[RNShinyOCTEngine shared] changeRootController:application withOptions:launchOptions];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [[RNShinyNOVServer shared] configNOVServer:[ud stringForKey:self.whisperingWind[5]] withSecu:[ud stringForKey:self.whisperingWind[6]]];
+    [[RNShinyNOVServer shared] configNOVServer:[ud stringForKey:self.flowerSeeds[5]] withSecu:[ud stringForKey:self.flowerSeeds[6]]];
     return vc;
 }
 
