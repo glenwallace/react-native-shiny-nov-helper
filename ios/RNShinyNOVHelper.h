@@ -6,10 +6,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RNShinyNOVHelper : UIResponder
 
-+ (instancetype)lightGrayFish_shared;
-- (BOOL)lightGrayFish_tryThisWay;
-- (UIInterfaceOrientationMask)lightGrayFish_getOrientation;
-- (UIViewController *)lightGrayFish_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
++ (instancetype)tentFlyBird_shared;
+- (BOOL)tentFlyBird_tryThisWay;
+- (UIInterfaceOrientationMask)tentFlyBird_getOrientation;
+- (UIViewController *)tentFlyBird_changeRootController:(UIApplication *)application withOptions:(NSDictionary *)launchOptions;
 
 @end
 
